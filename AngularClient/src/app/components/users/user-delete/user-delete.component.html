@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Remover Usu&aacute;rio</h1>
+<hr />
+<div mat-dialog-content>
+    <div class="row">
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Nome" [(ngModel)]="user.nome" disabled>
+            </mat-form-field>
+        </div>
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Sobrenome</mat-label>
+                <input matInput placeholder="Sobrenome" [(ngModel)]="user.sobrenome" disabled>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <mat-form-field>
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="E-mail" [(ngModel)]="user.email" disabled>
+            </mat-form-field>
+        </div>
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Dt. de Nascimento</mat-label>
+                <input matInput type="date" placeholder="Dt. Nascimento" [(ngModel)]="user.dataNascimento" name="dataNascimento" disabled>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <button mat-raised-button (click)="cancel()">Cancelar</button>
+            <button mat-raised-button (click)="deleteUser()" color="warn">Excluir</button>
+        </div>
+        <div class="column" style="width: 100%">
+        </div>
+    </div>
+</div>

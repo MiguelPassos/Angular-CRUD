@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Novo Usu&aacute;rio</h1>
+<hr />
+<div mat-dialog-content>
+    <div class="row">
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Nome" [(ngModel)]="user.nome" required>
+            </mat-form-field>
+        </div>
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Sobrenome</mat-label>
+                <input matInput placeholder="Sobrenome" [(ngModel)]="user.sobrenome" required>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <mat-form-field>
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="E-mail" [(ngModel)]="user.email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            </mat-form-field>
+        </div>
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Dt. de Nascimento</mat-label>
+                <input matInput type="date" placeholder="Dt. Nascimento" [(ngModel)]="user.dataNascimento" required>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Escolaridade</mat-label>
+                <mat-select [(ngModel)]="user.escolaridade" name="degree">
+                    <mat-option *ngFor="let degree of degrees" [value]="degree.id">
+                        {{ degree.nome }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="column">
+        </div>
+    </div>    
+</div>
+<div mat-dialog-actions style="float: right;">
+    <button mat-raised-button (click)="cancel()">Cancelar</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="user">Salvar</button>
+</div>

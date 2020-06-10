@@ -1,0 +1,49 @@
+<h1 mat-dialog-title>Atualizar Usu&aacute;rio</h1>
+<hr />
+<div mat-dialog-content>
+    <div class="row">
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Nome" [(ngModel)]="user.nome">
+            </mat-form-field>
+        </div>
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Sobrenome</mat-label>
+                <input matInput placeholder="Sobrenome" [(ngModel)]="user.sobrenome">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <mat-form-field>
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="E-mail" [(ngModel)]="user.email">
+            </mat-form-field>
+        </div>
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Dt. de Nascimento</mat-label>
+                <input matInput type="date" placeholder="Dt. Nascimento" [(ngModel)]="user.dataNascimento" name="dataNascimento">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <mat-form-field>
+                <mat-label>Escolaridade</mat-label>
+                <mat-select [(ngModel)]="user.escolaridade" name="degree">
+                    <mat-option *ngFor="let degree of degrees" [value]="degree.id">
+                        {{ degree.nome }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="column">
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="voltar()"><i class="material-icons" style="margin-right: 10px">reply_all</i>Voltar</button>
+</div>

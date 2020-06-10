@@ -1,0 +1,13 @@
+.column {
+    float: left;
+    width: 48%;
+    margin: 0px 3px;
+}
+
+.column .mat-form-field{
+    width: 100%;
+}
+
+.row{
+    margin-left: 10px;
+}
